@@ -46,9 +46,9 @@
 				$new_category_id = $_GET['category_id'];
 
 				// Update the category information in the database
-				$sql = "UPDATE category SET category_name='$new_category_name', category_entrydate='$new_category_entrydate' WHERE category_id=$new_category_id";
+				$sql1 = "UPDATE category SET category_name='$new_category_name', category_entrydate='$new_category_entrydate' WHERE category_id=$new_category_id";
 
-				if ($conn->query($sql) === TRUE) {
+				if ($conn->query($sql1) === TRUE) {
 				echo 'Data Updated Successfully!';
 				} else {
 				echo 'Data Not Updated';
