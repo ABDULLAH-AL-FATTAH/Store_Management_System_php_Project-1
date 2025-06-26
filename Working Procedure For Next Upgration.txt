@@ -1,0 +1,18 @@
+				Source File Creating
+				====================
+1. Open a code editor.
+2. install XAMPP and start Apache and Mysql server from XAMPP controler
+3. Create a folder as a project name in htdoc folder of the XAMPP.
+4. go to the code editor and write as following
+	<?php
+		echo 'Hello';
+	?>
+5. save it as index.php
+6. run it from browser url: localhost/StoreManagementSystem//index.php
+7. Now go to the urll: localhost/phpmyadmin/
+
+
+				Database creating
+				=================
+1. At first draw your Relational Database in doc with tables
+2. In this StoreManagementSytem
