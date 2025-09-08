@@ -23,9 +23,22 @@
 	
 	require('connection.php');
 
+        $sql1    =   "SELECT * FROM category";
+        $query1  =   $conn->query($sql1);
 
+        $data_list = array();
 
+       while ($data1   =   mysqli_fetch_assoc($query1))
+       {
 
+            $category_id       =   $data1['category_id'];
+            $category_name     =   $data1['category_name'];
+
+            $data_list[$category_id] = $category_name;
+            
+       }
+        
+      
  ?>
 
   <!-----------------------------Task:4.1 php to mysql database connection php segment End ----------------------------------------->				
@@ -37,7 +50,7 @@
 
 <html>
 	<head>
-		<title>List of Category</title>
+		<title>List of Product</title>
 	</head>
 	<body>
 			<!-----------------------------Task:4.2 Now we are going to show the Information of the database ----------------------->	
@@ -45,22 +58,25 @@
 			//here we use php mysql Database 'SELECT Data'> Example(MySQLi Object-Oriented) link: https://www.w3schools.com/php/php_mysql_select.asp (follow the link to understand)
 			
 
-			$sql="SELECT * FROM Category";
+			$sql="SELECT * FROM product";
 
 			$query = $conn->query($sql);
 
-			echo "<table border='1'><tr><th>Category</th><th>Data</th><th>Action</th></tr>";
+			echo "<table border='1'>
+                <tr><th>Product Name</th><th>Category</th><th>Code</th><th>Action</th></tr>";
 
 			while ( $data = mysqli_fetch_assoc($query)) {
 				 
-				 $category_id	=$data['category_id'];
-				 $category_name = $data['category_name'];
-				 $category_entrydate = $data['category_entrydate'];
+				 $product_id	    = $data['product_id'];
+				 $product_name      = $data['product_name'];
+				 $product_category  = $data['product_category'];
+				 $product_code      = $data['product_code'];
 
 				 echo "<tr>
-				 			<td>$category_name</td>
-				 			<td>$category_entrydate</td>
-				 			<td><a href='edit_category.php?id=$category_id'>Edit</a></td>
+				 			<td>$product_name</td>
+				 			<td>$data_list[$product_category]</td>
+				 			<td>$product_code</td>
+				 			<td><a href='edit_product.php?id=$product_id'>Edit</a></td>
 				 	  </tr>"; 
 				 	  //here we've created one more coloum as Edit and linking it's associative php file that edit_category.php
 			}

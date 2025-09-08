@@ -63,9 +63,9 @@
 <!-----------------------------Task:1  form for input data start-------------------------------------------->
 		<form action="edit_category.php" method="GET">
 			Category :<br>
-			<input type="text" name="category_name" value="<?php echo $category_name ?>"><br><br>
+			<input type="text" name="category_name" value="<?php echo $category_name ?>"> <br><br>
 			Category Entry Date : <br>
-			<input type="date" name="category_entrydate" value="<?php echo $category_entrydate ?>"><br><br>
+			<input type="date" name="category_entrydate" value="<?php echo $category_entrydate ?>"> <br><br>
 			<input type="text" name="category_id" value="<?php echo $category_id ?>" hidden>
 			<input type="submit" value="update">
 		</form>

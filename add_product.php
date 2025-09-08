@@ -40,7 +40,7 @@
     					} 
                     else 
                         {
-    					  echo 'Data Not Inserted';
+    					  echo 'Data Not Inserted!';
     					}
 
 			}
