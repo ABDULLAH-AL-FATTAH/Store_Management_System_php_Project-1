@@ -14,5 +14,5 @@
 
 				Database creating
 				=================
-1. At first draw your Relational Database in doc with tables
+1. At first drawn my Relational Database in doc with tables
 2. In this StoreManagementSytem
