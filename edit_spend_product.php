@@ -15,7 +15,7 @@
 
 <html>
 	<head>
-		<title>Edit store Product</title>
+		<title>Edit Spend Product</title>
 	</head>
 	<body>
 
@@ -26,7 +26,7 @@
 			if(isset($_GET['id'])){
                 $getid  =   $_GET['id'];
 
-                $sql = "SELECT *FROM store_product WHERE store_product_id  = $getid";
+                $sql = "SELECT *FROM spend_product WHERE spend_product_id  = $getid";
 
 				$query   = $conn->query($sql);
 
@@ -34,24 +34,24 @@
 
 
 
-				$store_product_id	            = $data['store_product_id'];
-				$store_product_name             = $data['store_product_name'];
-				$store_product_quantity         = $data['store_product_quantity'];
-				$store_product_entry_date       = $data['store_product_entry_date'];
+				 $spend_product_id	            = $data['spend_product_id'];
+				 $spend_product_name            = $data['spend_product_name'];
+				 $spend_product_quantity        = $data['spend_product_quantity'];
+				 $spend_product_entry_date      = $data['spend_product_entry_date'];
             }
 
-            if(isset($_GET['store_product_name']))
+            if(isset($_GET['spend_product_name']))
                 {
 
-                    $new_store_product_name           = $_GET['store_product_name'];
-                    $new_store_product_quantity       = $_GET['store_product_quantity'];               
-                    $new_store_product_entry_date     = $_GET['store_product_entry_date'];
-                    $new_store_product_id             = $_GET['store_product_id'];
+                    $new_spend_product_name           = $_GET['spend_product_name'];
+                    $new_spend_product_quantity       = $_GET['spend_product_quantity'];               
+                    $new_spend_product_entry_date     = $_GET['spend_product_entry_date'];
+                    $new_spend_product_id             = $_GET['spend_product_id'];
 
-                $sql1 = "UPDATE store_product SET  store_product_name='$new_store_product_name', 
-                                            store_product_quantity='$new_store_product_quantity',
-                                            store_product_entry_date='$new_store_product_entry_date'
-                  WHERE store_product_id=$new_store_product_id";
+                $sql1 = "UPDATE spend_product SET  spend_product_name='$new_spend_product_name', 
+                                            spend_product_quantity='$new_spend_product_quantity',
+                                            spend_product_entry_date='$new_spend_product_entry_date'
+                  WHERE spend_product_id=$new_spend_product_id";
 
 
                 // $query1 = $conn->query($sql1);
@@ -74,7 +74,7 @@
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
 			
 			Product :<br>
-            <select name="store_product_name">
+            <select name="spend_product_name">
                 <?php
                     
                      $sql = "SELECT * FROM product";
@@ -86,7 +86,7 @@
                                 $data_id = $data['product_id'];
                                 $data_name = $data['product_name'];
                    ?>     
-                    <option value='<?php echo $data_id ?>' <?php if($store_product_name == $data_id) {echo 'Selected';} ?>>
+                    <option value='<?php echo $data_id ?>' <?php if($spend_product_name == $data_id) {echo 'Selected';} ?>>
                     
                     <?php echo $data_name ?>
                     
@@ -97,12 +97,12 @@
             </select><br><br>
 			
 			Product Quantity:<br> 
-			<input type="number" name="store_product_quantity" value="<?php echo $store_product_quantity; ?>">  <br><br>
+			<input type="number" name="spend_product_quantity" value="<?php echo $spend_product_quantity; ?>">  <br><br>
 			Product Entry Date : <br>
-			<input type="date" name="store_product_entry_date" value="<?php echo $store_product_entry_date; ?>"> <br><br>
+			<input type="date" name="spend_product_entry_date" value="<?php echo $spend_product_entry_date; ?>"> <br><br>
 
 
-			<input type="text" name="store_product_id" value="<?php echo $store_product_id ?>"Hidden> 
+			<input type="text" name="spend_product_id" value="<?php echo $spend_product_id ?>"Hidden> 
 
             <input type="submit" value="submit">
 		</form>
