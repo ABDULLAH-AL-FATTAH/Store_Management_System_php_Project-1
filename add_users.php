@@ -25,7 +25,7 @@
 		<?php
 			if(isset($_GET['user_first_name']))
 			{
-    			$user_fisrt_name    = $_GET['user_first_name'];
+    			$user_first_name   = $_GET['user_first_name'];
     			$user_last_name   = $_GET['user_last_name'];
     			$user_email       = $_GET['user_email'];
     			$user_password   = $_GET['user_password'];
@@ -35,7 +35,7 @@
 			//now we are going to entry data for above categories of the Category table in our phpmysql using SQL
 
 			     $sql= "INSERT INTO users (user_first_name, user_last_name, user_email, user_password) 
-                        VALUES ('$user_fisrt_name', '$user_last_name', '$user_email', '$user_password')";
+                        VALUES ('$user_first_name', '$user_last_name', '$user_email', '$user_password')";
 			//Now we have create some quories using php's OOP method follow this: 
 
     				if ($conn->query($sql) == TRUE)
