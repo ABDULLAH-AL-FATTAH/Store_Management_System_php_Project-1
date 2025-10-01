@@ -1,6 +1,11 @@
 
 <?php
 
+?> 
+
+
+<?php
+
 function data_list($tablename, $column1, $column2){
     require('connection.php');
      $sql = "SELECT * FROM $tablename";
@@ -19,3 +24,5 @@ function data_list($tablename, $column1, $column2){
     
 
  ?>
+
+

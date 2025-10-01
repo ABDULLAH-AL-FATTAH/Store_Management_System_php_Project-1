@@ -23,6 +23,17 @@
 	
 	require('connection.php');
 
+//session : login-logout system এর জন্য session start করতে হবে। part-1 Start
+    session_start();
+    $user_first_name = $_SESSION['user_first_name'];
+    $user_last_name = $_SESSION['user_last_name'];
+
+     if(! empty($user_first_name) && ! empty($user_last_name) ){
+    
+//session: login-logout system এর জন্য session start করতে হবে। part-1 end
+
+
+
         $sql1    =   "SELECT * FROM category";
         $query1  =   $conn->query($sql1);
 
@@ -88,3 +99,13 @@
 
 
 </html>
+
+<?php
+//session : login-logout system এর জন্য session start করতে হবে। part-2 Start
+	 }
+	 else{
+	   header('location: login.php');
+	 }
+
+//session : login-logout system এর জন্য session start করতে হবে। part-2 end
+ ?>

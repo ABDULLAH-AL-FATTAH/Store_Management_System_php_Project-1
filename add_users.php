@@ -7,6 +7,16 @@
     require('connection.php');
 
 
+	//session : login-logout system এর জন্য session start করতে হবে। part-1 Start
+    session_start();
+    $user_first_name = $_SESSION['user_first_name'];
+    $user_last_name = $_SESSION['user_last_name'];
+
+     if(! empty($user_first_name) && ! empty($user_last_name) ){
+    
+//session: login-logout system এর জন্য session start করতে হবে। part-1 end
+
+
 ?>
 
 
@@ -81,3 +91,11 @@
 
 <!-----------------------------Task:1 form for input data End----------------------------------->
 </html>
+
+
+<?php
+     }
+     else{
+       header('location: login.php');
+     }
+ ?>
