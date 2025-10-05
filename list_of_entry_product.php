@@ -20,8 +20,6 @@
 
 
 
-
-
         $sql1    =   "SELECT * FROM product";
         $query1  =   $conn->query($sql1);
 
